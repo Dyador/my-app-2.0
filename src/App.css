@@ -1,0 +1,22 @@
+.App {
+ display: grid;
+ width: 1300px;
+ margin: 0 auto;
+ grid-template-areas: 
+ "Header Header"
+ "SideBar MainContent"; 
+ grid-template-rows: auto auto;
+ grid-template-columns: 3fr 10fr ;
+}
+.Header{
+  grid-area: Header;
+  
+}
+.SideBar{
+  grid-area: SideBar;
+  
+  
+}
+.MainContent{
+grid-area: MainContent;
+}

@@ -1,0 +1,24 @@
+import style from './MainContent.module.css'
+
+const MainContent = () => {
+    return(
+        <div className={style.wrapper}>
+         MainContent
+         <div className={style.content}>
+         <div >
+         <img className={style.img} src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Audi_A8_L_D5_IMG_0066.jpg/1200px-Audi_A8_L_D5_IMG_0066.jpg'/>
+         </div>
+         <div className={style.info}>
+             <a>Audi</a>
+             <a>A8</a>
+             <a>3.0</a>
+             <a>Long</a>
+             <a>55000$</a>
+         </div>
+         </div>
+        </div>
+    )
+}
+
+
+export default MainContent

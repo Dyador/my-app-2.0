@@ -1,0 +1,22 @@
+.wrapper{
+    background-color: #00FF62;
+    
+}
+.img{
+    max-width: 450px;
+    max-height: 300px;
+    grid-area: img;
+}
+.info{
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+}
+.content{
+    display: grid;
+    grid-template-areas: 
+    "img info"
+ ; 
+ grid-template-rows: auto auto;
+ grid-template-columns: 5fr 5fr ;
+}

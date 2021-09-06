@@ -1,4 +1,15 @@
 .wrapper{
-    background-color: #00E1FF;
+    background-color: #444444;
     
+}
+.item{
+font-size: 30px;
+padding: 10px 10px 10px 10px;
+border-radius: 30px;
+ 
+margin-bottom: 30px;
+color: #F8F8F8;
+}
+.active{
+    color: gold;
 }

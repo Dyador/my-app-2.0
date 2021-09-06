@@ -1,11 +1,12 @@
 .wrapper{
-    background-color: #00FF62;
+    background-color: #F2F2F2;
     
 }
 .img{
     max-width: 450px;
     max-height: 300px;
     grid-area: img;
+    margin-left: 40px;
 }
 .info{
     grid-area: info;

@@ -15,4 +15,4 @@ const Comment = (props) =>{
         </div>
     )
 } 
-export default Comment
+export default Comment  

@@ -6,10 +6,15 @@
 font-size: 30px;
 padding: 10px 10px 10px 10px;
 border-radius: 30px;
- 
 margin-bottom: 30px;
-color: #1D1D1F;
 }
-.active{
-    color: gold;
+.item a{
+    color:#1D1D1F
+  }
+.item a.active{
+    color: #A5A5A5;
+}
+.MainContent{
+    font-size: 9px;
+    color: black;
 }

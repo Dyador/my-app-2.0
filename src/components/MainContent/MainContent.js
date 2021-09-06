@@ -4,7 +4,7 @@ const MainContent = () => {
     return(
         <div className={style.wrapper}>
          <div className={style.mainContent}>
-         MainContent
+         
          </div>
          <div className={style.content}>
          <div >

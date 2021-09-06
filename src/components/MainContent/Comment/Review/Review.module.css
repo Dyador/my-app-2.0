@@ -1,0 +1,19 @@
+.wrapper img{
+width: 60px;
+height: 60px;
+
+}
+.wrapper{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-areas: "img comment"
+}
+.comment{
+   grid-area: comment; 
+   margin-top: 15px;
+}
+
+.img{
+grid-area: img;
+}

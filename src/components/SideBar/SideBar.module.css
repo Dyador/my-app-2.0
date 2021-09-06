@@ -1,5 +1,5 @@
 .wrapper{
-    background-color: #444444;
+    background-color: #F2F2F2;
     
 }
 .item{
@@ -8,7 +8,7 @@ padding: 10px 10px 10px 10px;
 border-radius: 30px;
  
 margin-bottom: 30px;
-color: #F8F8F8;
+color: #1D1D1F;
 }
 .active{
     color: gold;

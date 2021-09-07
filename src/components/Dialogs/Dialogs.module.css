@@ -1,5 +1,35 @@
 .wrapper{
-    
-    font-size: 100px;
+    display: grid;
+    grid-template-areas: "contacts messages";
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+}
+.foto{
+    width: 60px;
+    height: 60px;
+    border-radius: 30%
+}
+.contacts{
+    grid-area: contacts;
+    margin: 20px 0px 0px 30px;
+   
+}
+.messages{
+    grid-area: messages;
+    border: 1px solid gray;
+    width: 400px;
+    padding: 15px;
+    border-radius: 20%;
+
+}
+.messagesItems{
+    font-size: 30px;
     font-weight: bold;
+    margin: 20px;
+}
+a{
+    color: #1D1D1F;
+}
+a.active{
+    color: #A5A5A5;
 }

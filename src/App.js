@@ -22,7 +22,7 @@ const App = () => {
     <div className='SideBar'>  <SideBar /></div>
    
     <div className='MainContent'>
-    
+    {/* exact  */}
     <Route path='/Dialogs' component={Dialogs}/>
     <Route path='/MainContent' component={MainContent}/>
     <Route path='/UsedCars' component={UsedCars}/>

@@ -1,8 +1,12 @@
-import { NavLink } from 'react-router-dom'
+import DialogsItem from './DialogsItem'
 import style from './Dialogs.module.css'
-import Foto from './Foto'
+import Messages from './Messages'
 
-const Dialogs = () => {
+
+
+
+
+const Dialogs = (props) => {
 return(
     <div className={style.wrapper}>
       
@@ -11,38 +15,28 @@ return(
          
       <div className={style.contacts}>   
          <div>
-         <Foto />
-       <NavLink to="/Dialogs/1" activeClassName={style.active}>Kristian</NavLink>  
+           <DialogsItem name='Kristian' id='1'/>
          </div>
          <div>
-         <Foto />   
-        <NavLink to="/Dialogs/2" activeClassName={style.active}>Jessi</NavLink> 
+           <DialogsItem name='Jessi' id='2'/>
          </div>
          <div>
-         <Foto />
-       <NavLink to="/Dialogs/3" activeClassName={style.active}>David</NavLink>  
+           <DialogsItem name='David' id='3'/>
          </div>
          <div>
-         <Foto />
-        <NavLink to="/Dialogs/4" activeClassName={style.active}>Mayson</NavLink> 
+           <DialogsItem name='Mayson' id='4'/>
          </div>
          <div>
-         <Foto />
-        <NavLink to="/Dialogs/5" activeClassName={style.active}>Skot</NavLink> 
+           <DialogsItem name='Skott' id='5'/>
          </div>
          </div>
+
+         
           
       <div className={style.messages}>
-        <div className={style.messagesItems}>
-         I'll call you
-        </div>
-        <div className={style.messagesItems}>
-          Of course 
-        </div >
-        <div className={style.messagesItems}>
-         When it's convenient
-        </div>
-      
+      <Messages messages=" I'll call you" />
+      <Messages messages='Of course ' />
+      <Messages messages="When it's convenient" />
       </div>   
      
     </div>

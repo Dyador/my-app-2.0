@@ -4,7 +4,9 @@ const Comment = (props) =>{
     return(
         <div className={style.wrapper}>
         <div>
+            <div>
         <textarea></textarea>
+        </div>
         <button>Add comment</button>
         </div>
         <div>

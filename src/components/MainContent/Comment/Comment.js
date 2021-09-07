@@ -2,7 +2,7 @@ import style from './Comment.module.css'
 import Review from './Review/Review'
 const Comment = (props) =>{
    
-  let NewReviewData = props.ReviewData.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
+  let NewReviewData = props.UsedCars.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
 
     return(
         <div className={style.wrapper}>

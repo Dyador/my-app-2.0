@@ -26,7 +26,7 @@ const App = (props) => {
 
     <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage}  />} />
     <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage}/>}/>
-    <Route path='/UsedCars' component={UsedCars}/>
+    <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage} />}/>
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>
     <Route path='/LostTitle' component={LostTitle}/>

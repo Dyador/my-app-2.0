@@ -16,7 +16,7 @@ const MainContent = (props) => {
 
 
          <div className={style.info}>
-             <CarInfo />
+             <CarInfo infoCar={props.state.infoCar} />
          </div>
          <Comment ReviewData={props.state.ReviewData}/>
          </div>

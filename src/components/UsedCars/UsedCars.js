@@ -1,6 +1,6 @@
 import style from './UsedCars.module.css'
-
-const UsedCars = () => {
+import Comment from '../MainContent/Comment/Comment'
+const UsedCars = (props) => {
     return(
         <div className={style.wrapper}>
          
@@ -15,7 +15,7 @@ const UsedCars = () => {
              <a>SUV</a>
              <a>8000$</a>
          </div>
-         
+         <Comment UsedCars={props.state.UsedCars}/>
          </div>
         </div>
     )

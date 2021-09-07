@@ -1,12 +1,16 @@
 import DialogsItem from './DialogsItem'
 import style from './Dialogs.module.css'
 import Messages from './Messages'
+import { isElement } from 'react-dom/test-utils'
 
 
 
 
 
 const Dialogs = (props) => {
+
+
+
  let DialogsItemData = [
    {name: 'Kristian', id:'1'},
    {name: 'Jessi', id: '2'},
@@ -21,38 +25,16 @@ const Dialogs = (props) => {
     {messages: "When it's convenient", id: '3'},
     
   ]
+  let NewDialogsItemData = DialogsItemData.map(el => <DialogsItem name={el.name} id={el.id}/>)
+  let NewMessagesData = MessagesData.map(el =>  <Messages messages={el.messages} />)
 return(
     <div className={style.wrapper}>
-      
-
-     
-         
-      <div className={style.contacts}>   
-         <div>
-            <DialogsItem name={DialogsItemData[0].name} id={DialogsItemData[0].id}/>
-         </div>
-         <div>
-           <DialogsItem name={DialogsItemData[1].name} id={DialogsItemData[1].id}/>
-         </div>
-         <div>
-           <DialogsItem name={DialogsItemData[2].name} id={DialogsItemData[2].id}/>
-         </div>
-         <div>
-           <DialogsItem name={DialogsItemData[3].name} id={DialogsItemData[3].id}/>
-         </div>
-         <div>
-           <DialogsItem name={DialogsItemData[4].name} id={DialogsItemData[4].id}/>
-         </div>
-         </div>
-
-         
-          
-      <div className={style.messages}>
-      <Messages messages={MessagesData[0].messages} />
-      <Messages messages={MessagesData[1].messages} />
-      <Messages messages={MessagesData[2].messages} />
-      </div>   
-     
+    <div className={style.contacts}>   
+        {NewDialogsItemData}
+    </div>
+    <div className={style.messages}>
+      {NewMessagesData}
+    </div>   
     </div>
 )
 } 

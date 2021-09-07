@@ -6,7 +6,7 @@ const Comment = (props) =>{
        {comment: 'OK',  likeCount: '5'},
        {comment: '',  likeCount: '1'},
    ]
-
+  let NewReviewData = ReviewData.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
 
     return(
         <div className={style.wrapper}>
@@ -17,9 +17,7 @@ const Comment = (props) =>{
         <button>Add comment</button>
         </div>
         <div>
-        <Review comment={ReviewData[0].comment}  likeCount={ReviewData[0].likeCount}/>
-        <Review comment={ReviewData[1].comment}  likeCount={ReviewData[1].likeCount} />
-        <Review comment={ReviewData[2].comment}  likeCount={ReviewData[2].likeCount}/>
+       {NewReviewData}
         </div>
         </div>
     )

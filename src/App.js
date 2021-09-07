@@ -12,7 +12,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
     <div className="App">
@@ -23,8 +23,9 @@ const App = () => {
    
     <div className='MainContent'>
     {/* exact  */}
-    <Route path='/Dialogs' component={Dialogs}/>
-    <Route path='/MainContent' component={MainContent}/>
+
+    <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage}  />} />
+    <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage}/>}/>
     <Route path='/UsedCars' component={UsedCars}/>
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>

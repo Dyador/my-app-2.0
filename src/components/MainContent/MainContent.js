@@ -2,8 +2,8 @@ import style from './MainContent.module.css'
 import Comment from './Comment/Comment'
 import CarInfo from './CarInfo/CarInfo'
 
-const MainContent = () => {
-    
+const MainContent = (props) => {
+   
     return(
         <div className={style.wrapper}>
          <div className={style.mainContent}>
@@ -18,7 +18,7 @@ const MainContent = () => {
          <div className={style.info}>
              <CarInfo />
          </div>
-         <Comment />
+         <Comment ReviewData={props.state.ReviewData}/>
          </div>
         </div>
         

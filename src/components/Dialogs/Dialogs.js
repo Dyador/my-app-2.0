@@ -14,11 +14,13 @@ const Dialogs = (props) => {
  
   let newTextDialog = React.createRef()
   let addPostDialog = () => {
-    let text = newTextDialog.current.value
-    props.addPostDialogsPage(text)
-    newTextDialog.current.value=''
+    props.addPostDialogsPage()
+   
   }
-
+ let onChangeDialogsText = () => {
+  let text = newTextDialog.current.value 
+  props.updateTextDialogs(text)
+ }
 
 return(
     <div className={style.wrapper}>
@@ -29,7 +31,7 @@ return(
       {NewMessagesData}
     </div>
     <div>
-    <textarea ref={newTextDialog}></textarea>
+    <textarea ref={newTextDialog} onChange={onChangeDialogsText} value={props.state.newPostText}/>
     <button onClick={addPostDialog}>add Messages</button>
     </div>
     

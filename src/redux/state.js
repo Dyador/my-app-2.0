@@ -1,5 +1,8 @@
-import {rerender} from '../index'
+
+
+
 let state = {
+   
     DialogsPage: {
       DialogsItemData: [
       {name: 'Kristian', id:'1'},
@@ -9,6 +12,7 @@ let state = {
       {name: 'Skott', id: '5'},
      
    ],
+    newPostText:'...',
 
    MessagesData: [
      {messages: " I'll call you", id:'1'},
@@ -33,6 +37,8 @@ let state = {
     {comment: 'give me the best price',  likeCount: '12'},
     
   ],
+  newPost: '....', 
+
    infoCar: [
     {name: "Audi"},  
     {name: "A8"},
@@ -44,6 +50,8 @@ let state = {
     }
 }
 
+window.state = state
+
 export let addPostMc = (messages) => {
     
 let newPost ={
@@ -53,21 +61,45 @@ let newPost ={
  state.MainContentPage.ReviewData.push(newPost)
  rerender()
 }
-export let addPostDialogsPage = (messages) =>{
+export let addPostDialogsPage = () =>{
 let newPost ={
-    messages: messages, 
+    messages: state.DialogsPage.newPostText, 
     id:'1'
 }
 state.DialogsPage.MessagesData.push(newPost)
+state.DialogsPage.newPostText = ''
 rerender()
 }
+export let updateTextDialogs = (newText) => {
+state.DialogsPage.newPostText = newText
+rerender()
+}
+
+
+
+
+
+
 export let addPostUsedCars = (messages) => {
     let newPost ={
-    comment: messages, 
+    comment: state.MainContentPage.newPost, 
     likeCount: '44'
     }
     state.MainContentPage.UsedCars.push(newPost)
+    state.MainContentPage.newPost = ''
     rerender()
+}
+export let updateTextUsedCr = (newText) => {
+state.MainContentPage.newPost = newText
+rerender()
+}
+
+
+export let subscribe = (observer) => {
+    rerender = observer
+}
+let rerender = () => {
+
 }
 
 export default state 

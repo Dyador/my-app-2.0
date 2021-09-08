@@ -15,7 +15,8 @@ const UsedCars = (props) => {
              <a>SUV</a>
              <a>8000$</a>
          </div>
-         <Comment UsedCars={props.state.UsedCars} addPostUsedCars={props.addPostUsedCars}/>
+         <Comment UsedCars={props.state.UsedCars} addPostUsedCars={props.addPostUsedCars} 
+         newPost={props.state.newPost}  updateTextUsedCr={props.updateTextUsedCr}/>
          </div>
         </div>
     )

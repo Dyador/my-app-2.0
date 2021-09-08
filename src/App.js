@@ -24,9 +24,13 @@ const App = (props) => {
     <div className='MainContent'>
     {/* exact  */}
 
-    <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage} addPostDialogsPage={props.addPostDialogsPage}  />} />
-    <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} addPostMc={props.addPostMc}/>}/>
-    <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage} addPostUsedCars={props.addPostUsedCars} />}/>
+    <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage} 
+    addPostDialogsPage={props.addPostDialogsPage}  updateTextDialogs={props.updateTextDialogs}
+    />} />
+    <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} 
+    addPostMc={props.addPostMc}/>}/>
+    <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage}
+     addPostUsedCars={props.addPostUsedCars} updateTextUsedCr={props.updateTextUsedCr}/>}/>
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>
     <Route path='/LostTitle' component={LostTitle}/>

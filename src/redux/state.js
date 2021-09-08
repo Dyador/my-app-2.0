@@ -1,8 +1,9 @@
 
+let store = {
 
-
-let state = {
+   _state: {
    
+  
     DialogsPage: {
       DialogsItemData: [
       {name: 'Kristian', id:'1'},
@@ -48,58 +49,59 @@ let state = {
     {name: "quattro"}
 ]
     }
-}
+},
 
-window.state = state
 
-export let addPostMc = (messages) => {
+
+addPostMc (messages) {
     
 let newPost ={
     comment: messages,
     likeCount: '100'
 }
- state.MainContentPage.ReviewData.push(newPost)
- rerender()
-}
-export let addPostDialogsPage = () =>{
+this._state.MainContentPage.ReviewData.push(newPost)
+this.rerender()
+},
+
+
+addPostDialogsPage () {
 let newPost ={
-    messages: state.DialogsPage.newPostText, 
+    messages: this._state.DialogsPage.newPostText, 
     id:'1'
 }
-state.DialogsPage.MessagesData.push(newPost)
-state.DialogsPage.newPostText = ''
-rerender()
-}
-export let updateTextDialogs = (newText) => {
-state.DialogsPage.newPostText = newText
-rerender()
-}
+this._state.DialogsPage.MessagesData.push(newPost)
+this._state.DialogsPage.newPostText = ''
+this.rerender()
+},
+
+updateTextDialogs (newText) {
+this._state.DialogsPage.newPostText = newText
+this.rerender()
+},
 
 
-
-
-
-
-export let addPostUsedCars = (messages) => {
+addPostUsedCars (messages) {
     let newPost ={
-    comment: state.MainContentPage.newPost, 
+    comment: this._state.MainContentPage.newPost, 
     likeCount: '44'
     }
-    state.MainContentPage.UsedCars.push(newPost)
-    state.MainContentPage.newPost = ''
-    rerender()
-}
-export let updateTextUsedCr = (newText) => {
-state.MainContentPage.newPost = newText
-rerender()
-}
+    this._state.MainContentPage.UsedCars.push(newPost)
+    this._state.MainContentPage.newPost = ''
+    this.rerender()
+},
+
+updateTextUsedCr (newText) {
+this._state.MainContentPage.newPost = newText
+this.rerender()
+},
 
 
-export let subscribe = (observer) => {
-    rerender = observer
-}
-let rerender = () => {
+subscribe (observer)  {
+    this.rerender = observer
+},
+rerender () {
 
 }
-
-export default state 
+}
+export default store
+window.store = store

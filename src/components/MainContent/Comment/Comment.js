@@ -1,19 +1,28 @@
 import style from './Comment.module.css'
 import Review from './Review/Review'
+import React from 'react';
 const Comment = (props) =>{
    
-  let NewReviewData = props.UsedCars.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
+  let NewReviewData = props.ReviewData.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
 
+  let newPostText = React.createRef()
+
+  let addPost = () =>{
+     let text = newPostText.current.value
+     props.addPostMc(text)
+     newPostText.current.value =''
+  }
     return(
         <div className={style.wrapper}>
         <div>
             <div>
-        <textarea></textarea>
+        <textarea ref={newPostText}></textarea>
         </div>
-        <button>Add comment</button>
+        <button onClick={addPost} >Add comment</button>
         </div>
         <div>
        {NewReviewData}
+       
         </div>
         </div>
     )

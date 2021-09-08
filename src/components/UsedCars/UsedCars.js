@@ -1,5 +1,5 @@
 import style from './UsedCars.module.css'
-import Comment from '../MainContent/Comment/Comment'
+import Comment from './Comment/Comment'
 const UsedCars = (props) => {
     return(
         <div className={style.wrapper}>
@@ -15,7 +15,7 @@ const UsedCars = (props) => {
              <a>SUV</a>
              <a>8000$</a>
          </div>
-         <Comment UsedCars={props.state.UsedCars}/>
+         <Comment UsedCars={props.state.UsedCars} addPostUsedCars={props.addPostUsedCars}/>
          </div>
         </div>
     )

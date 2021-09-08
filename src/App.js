@@ -7,14 +7,14 @@ import UsedCars from './components/UsedCars/UsedCars'
 import NewCars from './components/NewCars/NewCars'
 import CarsFromEurope from './components/CarsFromEurope/CarsFromEurope'
 import LostTitle from './components/LostTitle/LostTitle'
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 
 
 
 
 const App = (props) => {
   return (
-    <BrowserRouter>
+    
     <div className="App">
 
     <div className='Header'>  <Header /></div>
@@ -24,15 +24,15 @@ const App = (props) => {
     <div className='MainContent'>
     {/* exact  */}
 
-    <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage}  />} />
-    <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage}/>}/>
-    <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage} />}/>
+    <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage} addPostDialogsPage={props.addPostDialogsPage}  />} />
+    <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} addPostMc={props.addPostMc}/>}/>
+    <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage} addPostUsedCars={props.addPostUsedCars} />}/>
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>
     <Route path='/LostTitle' component={LostTitle}/>
     </div>
     </div>
-    </BrowserRouter>
+    
   );
 }
 

@@ -1,4 +1,4 @@
-
+import {rerender} from '../index'
 let state = {
     DialogsPage: {
       DialogsItemData: [
@@ -24,7 +24,7 @@ let state = {
     {comment: 'OK',  likeCount: '5'},
     {comment: '',  likeCount: '1'},
     {comment: 'give me the best price',  likeCount: '12'},
-    {comment: 'give me the best price',  likeCount: '12'},
+    
   ],
   UsedCars:[
     {comment: 'WWW',  likeCount: '30'},
@@ -44,4 +44,30 @@ let state = {
     }
 }
 
-export default state
+export let addPostMc = (messages) => {
+    
+let newPost ={
+    comment: messages,
+    likeCount: '100'
+}
+ state.MainContentPage.ReviewData.push(newPost)
+ rerender()
+}
+export let addPostDialogsPage = (messages) =>{
+let newPost ={
+    messages: messages, 
+    id:'1'
+}
+state.DialogsPage.MessagesData.push(newPost)
+rerender()
+}
+export let addPostUsedCars = (messages) => {
+    let newPost ={
+    comment: messages, 
+    likeCount: '44'
+    }
+    state.MainContentPage.UsedCars.push(newPost)
+    rerender()
+}
+
+export default state 

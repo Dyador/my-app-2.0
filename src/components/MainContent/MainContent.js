@@ -18,7 +18,7 @@ const MainContent = (props) => {
          <div className={style.info}>
              <CarInfo infoCar={props.state.infoCar} />
          </div>
-         <Comment ReviewData={props.state.ReviewData}/>
+         <Comment ReviewData={props.state.ReviewData} addPostMc={props.addPostMc}/>
          </div>
         </div>
         

@@ -19,9 +19,9 @@ const MainContent = (props) => {
              <CarInfo infoCar={props.state.infoCar} />
          </div>
          <Comment ReviewData={props.state.ReviewData} 
-         addPostMc={props.addPostMc} 
+         dispatch={props.dispatch} 
          newPostCp={props.state.newPostCp}
-         updateTextMainContent={props.updateTextMainContent}/>
+         />
          </div>
         </div>
         

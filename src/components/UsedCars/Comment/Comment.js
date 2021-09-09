@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Comment.module.css'
 import Review from './Review/Review'
-import {addPostUsedCars, updateTextUsedCr} from '../../../redux/state'
+import {addPostUsedCars, updateTextUsedCr} from '../../../redux/used-cars-reducer'
 const Comment = (props) =>{
 
   let NewUsedCars = props.UsedCars.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)

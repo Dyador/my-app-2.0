@@ -11,16 +11,13 @@ export let rerender = () => {
 ReactDOM.render(
   <BrowserRouter>
      <React.StrictMode>
-       <App state={store._state} addPostMc={store.addPostMc.bind(store)} 
-       addPostDialogsPage={store.addPostDialogsPage.bind(store)}
-
-
-       dispatch={store.dispatch.bind(store)}
-       
-
-
-       updateTextDialogs={store.updateTextDialogs.bind(store)}
-       updateTextMainContent={store.updateTextMainContent.bind(store)} />
+       <App state={store._state} 
+  
+        dispatch={store.dispatch.bind(store)}
+        
+        addPostDialogsPage={store.addPostDialogsPage.bind(store)}
+        updateTextDialogs={store.updateTextDialogs.bind(store)}
+        />
      </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')

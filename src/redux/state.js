@@ -1,4 +1,5 @@
-
+import mainContentReducer from './main-content-reducer'
+import usedCarsReducer from './used-cars-reducer'
 let store = {
 
    _state: {
@@ -55,21 +56,25 @@ let store = {
 
 
 
-addPostMc () {
+// addPostMc () {
     
-let newPost ={
-    comment: this._state.MainContentPage.newPostCp,
-    likeCount: '100'
-}
-this._state.MainContentPage.ReviewData.push(newPost)
-this._state.MainContentPage.newPostCp = ''
-this.rerender()
-},
+// let newPost ={
+//     comment: this._state.MainContentPage.newPostCp,
+//     likeCount: '100'
+// }
+// this._state.MainContentPage.ReviewData.push(newPost)
+// this._state.MainContentPage.newPostCp = ''
+// this.rerender()
+// },
 
-updateTextMainContent (newText) {
-  this._state.MainContentPage.newPostCp = newText
-  this.rerender()
-},
+// updateTextMainContent (newText) {
+//   this._state.MainContentPage.newPostCp = newText
+//   this.rerender()
+// },
+
+
+
+
 
 addPostDialogsPage () {
 let newPost ={
@@ -89,20 +94,13 @@ this.rerender()
 
 
  dispatch(action){
-   
- if(action.type === 'ADD-POST-USED-CARS'){
-  let newPost ={
-    comment: this._state.MainContentPage.newPost, 
-    likeCount: '44'
-    }
-    this._state.MainContentPage.UsedCars.push(newPost)
-    this._state.MainContentPage.newPost = ''
-    this.rerender()
- }else if(action.type === 'UPDATE-TEXT-USED-CR'){
- 
-  this._state.MainContentPage.newPost = action.newText
+
+
+  mainContentReducer(this._state.MainContentPage, action)
+  usedCarsReducer(this._state.MainContentPage, action)
   this.rerender()
- }
+
+ 
 
  },
 
@@ -118,18 +116,7 @@ rerender () {
 }
 
 
-export let addPostUsedCars = () =>{
-  return{
-    type: "ADD-POST-USED-CARS"
-  }
-}
 
 
-export let updateTextUsedCr = (text) => {
-  return{
-   type: 'UPDATE-TEXT-USED-CR',
-   newText: text
-  }
-}
 export default store
 window.store = store

@@ -13,6 +13,7 @@ import {Route} from "react-router-dom";
 
 
 const App = (props) => {
+
   return (
     
     <div className="App">
@@ -28,8 +29,8 @@ const App = (props) => {
     addPostDialogsPage={props.addPostDialogsPage}  updateTextDialogs={props.updateTextDialogs}
     />} />
     <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} 
-    addPostMc={props.addPostMc}
-    updateTextMainContent={props.updateTextMainContent}/>}/>
+    dispatch={props.dispatch}
+    />}/>
 
     <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage}
     dispatch={props.dispatch} />}/>

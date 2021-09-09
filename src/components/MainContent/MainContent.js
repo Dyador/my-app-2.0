@@ -18,7 +18,10 @@ const MainContent = (props) => {
          <div className={style.info}>
              <CarInfo infoCar={props.state.infoCar} />
          </div>
-         <Comment ReviewData={props.state.ReviewData} addPostMc={props.addPostMc}/>
+         <Comment ReviewData={props.state.ReviewData} 
+         addPostMc={props.addPostMc} 
+         newPostCp={props.state.newPostCp}
+         updateTextMainContent={props.updateTextMainContent}/>
          </div>
         </div>
         

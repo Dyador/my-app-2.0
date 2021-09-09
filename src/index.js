@@ -13,9 +13,14 @@ ReactDOM.render(
      <React.StrictMode>
        <App state={store._state} addPostMc={store.addPostMc.bind(store)} 
        addPostDialogsPage={store.addPostDialogsPage.bind(store)}
-       addPostUsedCars={store.addPostUsedCars.bind(store)}
+
+
+       dispatch={store.dispatch.bind(store)}
+       
+
+
        updateTextDialogs={store.updateTextDialogs.bind(store)}
-       updateTextUsedCr={store.updateTextUsedCr.bind(store)} />
+       updateTextMainContent={store.updateTextMainContent.bind(store)} />
      </React.StrictMode>
   </BrowserRouter>,
   document.getElementById('root')

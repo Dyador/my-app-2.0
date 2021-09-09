@@ -31,6 +31,8 @@ let store = {
     {comment: 'give me the best price',  likeCount: '12'},
     
   ],
+    newPostCp: '..',
+
   UsedCars:[
     {comment: 'WWW',  likeCount: '30'},
     {comment: 'nop',  likeCount: '52'},
@@ -53,16 +55,21 @@ let store = {
 
 
 
-addPostMc (messages) {
+addPostMc () {
     
 let newPost ={
-    comment: messages,
+    comment: this._state.MainContentPage.newPostCp,
     likeCount: '100'
 }
 this._state.MainContentPage.ReviewData.push(newPost)
+this._state.MainContentPage.newPostCp = ''
 this.rerender()
 },
 
+updateTextMainContent (newText) {
+  this._state.MainContentPage.newPostCp = newText
+  this.rerender()
+},
 
 addPostDialogsPage () {
 let newPost ={
@@ -80,20 +87,26 @@ this.rerender()
 },
 
 
-addPostUsedCars (messages) {
-    let newPost ={
+
+ dispatch(action){
+   
+ if(action.type === 'ADD-POST-USED-CARS'){
+  let newPost ={
     comment: this._state.MainContentPage.newPost, 
     likeCount: '44'
     }
     this._state.MainContentPage.UsedCars.push(newPost)
     this._state.MainContentPage.newPost = ''
     this.rerender()
-},
+ }else if(action.type === 'UPDATE-TEXT-USED-CR'){
+ 
+  this._state.MainContentPage.newPost = action.newText
+  this.rerender()
+ }
 
-updateTextUsedCr (newText) {
-this._state.MainContentPage.newPost = newText
-this.rerender()
-},
+ },
+
+
 
 
 subscribe (observer)  {
@@ -102,6 +115,21 @@ subscribe (observer)  {
 rerender () {
 
 }
+}
+
+
+export let addPostUsedCars = () =>{
+  return{
+    type: "ADD-POST-USED-CARS"
+  }
+}
+
+
+export let updateTextUsedCr = (text) => {
+  return{
+   type: 'UPDATE-TEXT-USED-CR',
+   newText: text
+  }
 }
 export default store
 window.store = store

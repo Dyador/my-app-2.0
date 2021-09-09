@@ -8,15 +8,20 @@ const Comment = (props) =>{
   let newPostText = React.createRef()
 
   let addPost = () =>{
-     let text = newPostText.current.value
-     props.addPostMc(text)
-     newPostText.current.value =''
+    props.addPostMc()
+     
   }
+  
+  let onChangeText = () => {
+    let text = newPostText.current.value
+    props.updateTextMainContent(text)
+  }
+
     return(
         <div className={style.wrapper}>
         <div>
             <div>
-        <textarea ref={newPostText}></textarea>
+        <textarea ref={newPostText} onChange={onChangeText} value={props.newPostCp}></textarea>
         </div>
         <button onClick={addPost} >Add comment</button>
         </div>

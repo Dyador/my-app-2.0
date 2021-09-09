@@ -28,9 +28,13 @@ const App = (props) => {
     addPostDialogsPage={props.addPostDialogsPage}  updateTextDialogs={props.updateTextDialogs}
     />} />
     <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} 
-    addPostMc={props.addPostMc}/>}/>
+    addPostMc={props.addPostMc}
+    updateTextMainContent={props.updateTextMainContent}/>}/>
+
     <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage}
-     addPostUsedCars={props.addPostUsedCars} updateTextUsedCr={props.updateTextUsedCr}/>}/>
+    dispatch={props.dispatch} />}/>
+
+
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>
     <Route path='/LostTitle' component={LostTitle}/>

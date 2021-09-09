@@ -15,8 +15,7 @@ ReactDOM.render(
   
         dispatch={store.dispatch.bind(store)}
         
-        addPostDialogsPage={store.addPostDialogsPage.bind(store)}
-        updateTextDialogs={store.updateTextDialogs.bind(store)}
+        
         />
      </React.StrictMode>
   </BrowserRouter>,

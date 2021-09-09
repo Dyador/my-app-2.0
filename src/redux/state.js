@@ -1,5 +1,6 @@
 import mainContentReducer from './main-content-reducer'
 import usedCarsReducer from './used-cars-reducer'
+import dialogsReducer from './dialogs-reducer'
 let store = {
 
    _state: {
@@ -76,20 +77,20 @@ let store = {
 
 
 
-addPostDialogsPage () {
-let newPost ={
-    messages: this._state.DialogsPage.newPostText, 
-    id:'1'
-}
-this._state.DialogsPage.MessagesData.push(newPost)
-this._state.DialogsPage.newPostText = ''
-this.rerender()
-},
+// addPostDialogsPage () {
+// let newPost ={
+//     messages: this._state.DialogsPage.newPostText, 
+//     id:'1'
+// }
+// this._state.DialogsPage.MessagesData.push(newPost)
+// this._state.DialogsPage.newPostText = ''
+// this.rerender()
+// },
 
-updateTextDialogs (newText) {
-this._state.DialogsPage.newPostText = newText
-this.rerender()
-},
+// updateTextDialogs (newText) {
+// this._state.DialogsPage.newPostText = newText
+// this.rerender()
+// },
 
 
 
@@ -98,6 +99,7 @@ this.rerender()
 
   mainContentReducer(this._state.MainContentPage, action)
   usedCarsReducer(this._state.MainContentPage, action)
+  dialogsReducer(this._state.DialogsPage, action)
   this.rerender()
 
  

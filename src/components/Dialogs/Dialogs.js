@@ -2,7 +2,7 @@ import DialogsItem from './DialogsItem'
 import style from './Dialogs.module.css'
 import Messages from './Messages'
 import React from 'react'
-
+import {addPostDialogsPageAc, updateTextDialogsAc} from '../../redux/dialogs-reducer'
 
 
 
@@ -14,12 +14,12 @@ const Dialogs = (props) => {
  
   let newTextDialog = React.createRef()
   let addPostDialog = () => {
-    props.addPostDialogsPage()
+    props.dispatch(addPostDialogsPageAc())
    
   }
  let onChangeDialogsText = () => {
   let text = newTextDialog.current.value 
-  props.updateTextDialogs(text)
+  props.dispatch(updateTextDialogsAc(text))
  }
 
 return(

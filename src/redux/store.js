@@ -56,44 +56,6 @@ let store = {
 },
 
 
-
-// addPostMc () {
-    
-// let newPost ={
-//     comment: this._state.MainContentPage.newPostCp,
-//     likeCount: '100'
-// }
-// this._state.MainContentPage.ReviewData.push(newPost)
-// this._state.MainContentPage.newPostCp = ''
-// this.rerender()
-// },
-
-// updateTextMainContent (newText) {
-//   this._state.MainContentPage.newPostCp = newText
-//   this.rerender()
-// },
-
-
-
-
-
-// addPostDialogsPage () {
-// let newPost ={
-//     messages: this._state.DialogsPage.newPostText, 
-//     id:'1'
-// }
-// this._state.DialogsPage.MessagesData.push(newPost)
-// this._state.DialogsPage.newPostText = ''
-// this.rerender()
-// },
-
-// updateTextDialogs (newText) {
-// this._state.DialogsPage.newPostText = newText
-// this.rerender()
-// },
-
-
-
  dispatch(action){
 
 

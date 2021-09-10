@@ -31,8 +31,8 @@ const App = (props) => {
     <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} 
     dispatch={props.dispatch}
     />}/>
-
-    <Route path='/UsedCars' render={() => <UsedCars state={props.state.MainContentPage}
+   
+    <Route path='/UsedCars' render={() => <UsedCars state={props.state.UsedCarsPage}
     dispatch={props.dispatch} />}/>
 
 

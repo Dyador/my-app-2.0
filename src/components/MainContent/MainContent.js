@@ -3,7 +3,7 @@ import Comment from './Comment/Comment'
 import CarInfo from './CarInfo/CarInfo'
 
 const MainContent = (props) => {
-   
+
     return(
         <div className={style.wrapper}>
          <div className={style.mainContent}>

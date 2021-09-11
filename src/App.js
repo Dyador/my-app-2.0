@@ -1,5 +1,5 @@
 import './App.css'
-import Dialogs from './components/Dialogs/Dialogs';
+import ContainerDialogs from './components/Dialogs/ContainerDialogs';
 import Header from './components/Header/Header'
 import MainContent from './components/MainContent/MainContent';
 import SideBar from './components/SideBar/SideBar';
@@ -25,16 +25,18 @@ const App = (props) => {
     <div className='MainContent'>
     {/* exact  */}
 
-    <Route path='/Dialogs' render={() => <Dialogs state={props.state.DialogsPage} 
-     dispatch={props.dispatch}
+    <Route path='/Dialogs' render={() => <ContainerDialogs 
     />} />
-    <Route path='/MainContent' render={() => <MainContent state={props.state.MainContentPage} 
-    dispatch={props.dispatch}
+    {/* store={props.store} */}
+    <Route path='/MainContent' render={() => <MainContent 
+    
     />}/>
+    
    
-    <Route path='/UsedCars' render={() => <UsedCars state={props.state.UsedCarsPage}
-    dispatch={props.dispatch} />}/>
-
+    <Route path='/UsedCars' render={() => <UsedCars 
+         
+         />}/>
+          
 
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>

@@ -1,6 +1,6 @@
 import style from './MainContent.module.css'
-import Comment from './Comment/Comment'
-import CarInfo from './CarInfo/CarInfo'
+import ContainerReviewMainContent from './Comment/ContainerCommentMainContent'
+import ContainerCarInfo from './CarInfo/ContainerCarInfo'
 
 const MainContent = (props) => {
 
@@ -16,12 +16,9 @@ const MainContent = (props) => {
 
 
          <div className={style.info}>
-             <CarInfo infoCar={props.state.infoCar} />
+             <ContainerCarInfo />
          </div>
-         <Comment ReviewData={props.state.ReviewData} 
-         dispatch={props.dispatch} 
-         newPostCp={props.state.newPostCp}
-         />
+         <ContainerReviewMainContent/>
          </div>
         </div>
         

@@ -23,19 +23,25 @@ let initialState = {
 let dialogsReducer = (state = initialState, action) =>{
 
      switch(action.type){
-     case 'ADD-POST-DIALOGS-PAGE':
+     case 'ADD-POST-DIALOGS-PAGE':{
         let newPost ={
             messages: state.newPostText, 
             id:'1'
         }
-        state.MessagesData.push(newPost)
-        state.newPostText = ''
-        return state
-        case 'UPDATE-TEXT-DIALOGS':
-            state.newPostText = action.newText
-            return state
+        let copyState = {...state} 
+        copyState.MessagesData = [...state.MessagesData]
+        copyState.MessagesData.push(newPost)
+        copyState.newPostText = ''
+        return copyState
+    }
+        case 'UPDATE-TEXT-DIALOGS':{
+            let copyState = {...state} 
+            copyState.newPostText = action.newText
+            return copyState
+        }
          default:
-            return state    
+            return state   
+        
      }
      
     
@@ -48,6 +54,7 @@ export let addPostDialogsPageAc = () =>{
 }
 
 export let updateTextDialogsAc = (text) =>{
+    
     return{
     type: 'UPDATE-TEXT-DIALOGS' , newText: text
     }

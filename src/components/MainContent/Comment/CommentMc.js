@@ -1,21 +1,21 @@
 import style from './Comment.module.css'
 import Review from './Review/Review'
 import React from 'react';
-import {addPostMc, onChangeTextMc} from '../../../redux/main-content-reducer'
-const Comment = (props) =>{
+
+const CommentMc = (props) =>{
    
   let NewReviewData = props.ReviewData.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
 
   let newPostText = React.createRef()
 
   let addPost = () =>{
-    props.dispatch(addPostMc())
+    props.addPostMc()
      
   }
   
   let onChangeText = () => {
     let text = newPostText.current.value
-    props.dispatch(onChangeTextMc(text))
+    props.onChangeTextMc(text)
   }
 
     return(
@@ -33,4 +33,4 @@ const Comment = (props) =>{
         </div>
     )
 } 
-export default Comment  
+export default CommentMc

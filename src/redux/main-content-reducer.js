@@ -62,7 +62,9 @@ let mainContentReducer = (state = initialState, action) => {
   export let onChangeTextMc = (text) => {
     return{
       type: 'UPDATE-TEXT-MAIN-CONTENT',  newText: text
+      
   }
+  
   }
- 
+  
  export default mainContentReducer

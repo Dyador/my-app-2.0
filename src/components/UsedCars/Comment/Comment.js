@@ -1,7 +1,7 @@
 import React from 'react'
 import style from './Comment.module.css'
 import Review from './Review/Review'
-import {addPostUsedCars, updateTextUsedCr} from '../../../redux/used-cars-reducer'
+
 const Comment = (props) =>{
 
   let NewUsedCars = props.UsedCars.map(e => <Review comment={e.comment}  likeCount={e.likeCount}/>)
@@ -10,13 +10,13 @@ const Comment = (props) =>{
  
   
    let addPostUC = () => {
-    // props.addPostUsedCars()
-    props.dispatch(addPostUsedCars())
+    props.addPostUC()
+    // props.dispatch(addPostUsedCars())
    }
  let changTextUc = () =>{
     let text = newPostUsedCar.current.value
-    // props.updateTextUsedCr(text)
-    props.dispatch(updateTextUsedCr(text))
+    props.changTextUc(text)
+    // props.dispatch(updateTextUsedCr(text))
  }
     return(
         <div className={style.wrapper}>

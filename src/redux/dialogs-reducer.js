@@ -39,7 +39,7 @@ let dialogsReducer = (state = initialState, action) =>{
             copyState.newPostText = action.newText
             return copyState
         }
-         default:
+         default:   
             return state   
         
      }

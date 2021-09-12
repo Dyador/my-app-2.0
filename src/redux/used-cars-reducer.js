@@ -36,17 +36,22 @@ let initialState = {
 let usedCarsReducer = (state = initialState, action) => {
   
      switch(action.type){
-         case'ADD-POST-USED-CARS':
+         case'ADD-POST-USED-CARS':{
          let newPost ={
             comment: state.newPost, 
             likeCount: '44'
             }
-            state.UsedCars.push(newPost)
-            state.newPost = ''
-            return state
-        case 'UPDATE-TEXT-USED-CR':
-            state.newPost = action.newText
-            return state
+            let copyState = {...state}
+            copyState.UsedCars = [...state.UsedCars]
+            copyState.UsedCars.push(newPost)
+            copyState.newPost = ''
+            return copyState
+          }
+        case 'UPDATE-TEXT-USED-CR':{
+           let copyState = {...state}
+            copyState.newPost = action.newText
+            return copyState
+        }
         default:
             return state
      }

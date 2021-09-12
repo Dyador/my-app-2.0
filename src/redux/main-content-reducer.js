@@ -35,18 +35,25 @@ let initialState = {
 let mainContentReducer = (state = initialState, action) => { 
     
      switch(action.type){
-    case'ADD-POST-MC' :
+    case'ADD-POST-MC' :{
         let newPost ={
             comment: state.newPostCp,
             likeCount: '100'
         }
-        state.ReviewData.push(newPost)
-        state.newPostCp = ''
-        return state
+        let copyState = {...state}
+        copyState.ReviewData = [...state.ReviewData]
+        copyState.ReviewData.push(newPost)
+        copyState.newPostCp = ''
+     
+        return copyState
+      }
 
-    case 'UPDATE-TEXT-MAIN-CONTENT': 
-         state.newPostCp = action.newText
-    return state
+    case 'UPDATE-TEXT-MAIN-CONTENT': {
+         let copyState = {...state}
+         copyState.newPostCp = action.newText
+    
+    return copyState
+  }
 
     default: 
          return state

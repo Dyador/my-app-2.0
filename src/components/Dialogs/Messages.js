@@ -4,7 +4,7 @@ const Messages = (props) => {
     return(
         
         <div className={style.messagesItems}>
-        {props.messages}
+        {props.status}
        </div>
       
     )

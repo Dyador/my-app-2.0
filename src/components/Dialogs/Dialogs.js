@@ -10,10 +10,11 @@ import React from 'react'
 
 const Dialogs = (props) => {
 
-  let NewDialogsItemData = props.DialogsItemData.map(el => <DialogsItem name={el.name} id={el.id}/>)
-  let NewMessagesData = props.MessagesData.map(el =>  <Messages messages={el.messages} />)
+  let Page = props.users.map(el => <DialogsItem  fullName={el.fullName}/> )
+  let NewMessagesData = props.users.map(el => <Messages status={el.status} />)
  
   let newTextDialog = React.createRef()
+
   let addPostDialogd = () => {
     props.addPostDialog()
    
@@ -25,9 +26,9 @@ const Dialogs = (props) => {
 
 return(
     <div className={style.wrapper}>
-    <div className={style.contacts}>   
-        {NewDialogsItemData}
-    </div>
+    <div className={style.contacts}>  
+      {Page}
+      </div>
     <div className={style.messages}>
       {NewMessagesData}
     </div>
@@ -41,4 +42,5 @@ return(
     </div>
 )
 } 
+
 export default Dialogs

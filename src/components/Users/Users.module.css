@@ -1,0 +1,7 @@
+.wrapper{
+    display: grid;
+    grid-template-areas: "contacts messages";
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+
+}

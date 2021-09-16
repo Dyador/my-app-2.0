@@ -4,10 +4,15 @@ import Fotos from './Fotos'
 
 const DialogsItem = (props) => {
     let info = "/Dialogs/" + props.id
+
+   
     return(
       <div>
+        
       <Fotos />
-      <NavLink to={info} activeClassName={style.active}>{props.name}</NavLink>  
+      
+      <NavLink to={info} activeClassName={style.active}>{props.fullName}</NavLink>
+       <div> </div>
       </div>
     )
   }

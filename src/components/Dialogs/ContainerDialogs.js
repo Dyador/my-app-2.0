@@ -1,6 +1,6 @@
 import Dialogs from './Dialogs'
 import React from 'react'
-import {addPostDialogsPageAc, updateTextDialogsAc} from '../../redux/dialogs-reducer'
+import {addPostDialogsPageAc, updateTextDialogsAc,} from '../../redux/dialogs-reducer'
 import { connect } from 'react-redux'
 
 
@@ -32,12 +32,13 @@ import { connect } from 'react-redux'
 // } 
 const mapStateToProps = (state) => {
     return{
-        DialogsItemData: state.DialogsPage.DialogsItemData,
-        MessagesData: state.DialogsPage.MessagesData,
+        users: state.DialogsPage.users,
+        users: state.DialogsPage.users,
         newPostText: state.DialogsPage.newPostText,
+        
 }
 }
-const mapDispatchToProps = (dispatch,store) => {
+const mapDispatchToProps = (dispatch) => {
     
     return{
         addPostDialog: () =>{
@@ -46,7 +47,9 @@ const mapDispatchToProps = (dispatch,store) => {
         onChangeDialogsText: (text) =>{
             
            dispatch(updateTextDialogsAc(text))
-           }
+           },
+         
+ 
            
 }
 }

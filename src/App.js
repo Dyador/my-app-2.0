@@ -7,6 +7,8 @@ import UsedCars from './components/UsedCars/UsedCars'
 import NewCars from './components/NewCars/NewCars'
 import CarsFromEurope from './components/CarsFromEurope/CarsFromEurope'
 import LostTitle from './components/LostTitle/LostTitle'
+import ContainerUsers from './components/Users/ContainerUsers'
+import Users from './components/Users/Users'
 import {Route} from "react-router-dom";
 
 
@@ -21,7 +23,7 @@ const App = (props) => {
     <div className='Header'>  <Header /></div>
 
     <div className='SideBar'>  <SideBar /></div>
-   
+    
     <div className='MainContent'>
     {/* exact  */}
 
@@ -31,12 +33,13 @@ const App = (props) => {
     <Route path='/MainContent' render={() => <MainContent 
     
     />}/>
-    
    
+    <Route path='/Users' render={() => <ContainerUsers />}/> 
     <Route path='/UsedCars' render={() => <UsedCars 
          
          />}/>
-          
+  
+    
 
     <Route path='/NewCars' component={NewCars}/>
     <Route path='/CarsFromEurope' component={CarsFromEurope}/>

@@ -13,10 +13,18 @@ let initialState = {
      MessagesData: [
        {messages: " I'll call you", id:'1'},
        {messages: 'Of course ', id: '2'},
-       {messages: "When it's convenient", id: '3'},
+       { id: '3', messages: "When it's convenient"},
        
      ],
-      
+    
+     users: [
+        {fullName: 'Kristian', id:'1',  status: "I'll call you", followed: false, location:{city: 'Kiev', country:'Ukraine'}},
+        {fullName: 'Jessi', id:'1',  status: "Of course",followed: false, location: {city: 'Kiev', country:'Ukraine'}},
+        {fullName: 'David', id:'1',  status: "When it's convenient", followed: false, location: {city: 'Kiev', country:'Ukraine'}},
+        {fullName: 'Mayson', id:'1',  status: "",},
+        {fullName: 'Skott', id:'1',  status: "?",}
+     ]
+
     
 }
 
@@ -25,12 +33,12 @@ let dialogsReducer = (state = initialState, action) =>{
      switch(action.type){
      case 'ADD-POST-DIALOGS-PAGE':{
         let newPost ={
-            messages: state.newPostText, 
+            status: state.newPostText, 
             id:'1'
         }
         let copyState = {...state} 
-        copyState.MessagesData = [...state.MessagesData]
-        copyState.MessagesData.push(newPost)
+        copyState.users = [...state.users]
+        copyState.users.push(newPost)
         copyState.newPostText = ''
         return copyState
     }
@@ -39,13 +47,14 @@ let dialogsReducer = (state = initialState, action) =>{
             copyState.newPostText = action.newText
             return copyState
         }
-         default:   
+          default:   
             return state   
         
      }
      
     
 }
+
 
 export let addPostDialogsPageAc = () =>{
     return{

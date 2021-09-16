@@ -26,6 +26,9 @@ return(
       <div className={style.item}>
         <NavLink to="/Dialogs"  activeClassName={style.active}>Dialogs</NavLink>
       </div>
+      <div className={style.item}>
+        <NavLink to="/Users"  activeClassName={style.active}>Users</NavLink>
+      </div>
     </div>
 )
 } 

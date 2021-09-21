@@ -1,4 +1,5 @@
 import Users from './Users'
+import UsersC from './UsersC'
 import { connect } from 'react-redux'
 import React from 'react'
 import {unFollowAc, followAc, setUsersAC} from '../../redux/users-reducer'
@@ -31,5 +32,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-const ContainerUsers = connect(mapStateToProps, mapDispatchToProps )(Users)
+const ContainerUsers = connect(mapStateToProps, mapDispatchToProps )(UsersC)
 export default ContainerUsers

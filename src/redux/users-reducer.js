@@ -1,6 +1,9 @@
 let initialState = {
     
-       users:[ ]
+       users:[ ],
+       pageSize: 5,
+       totalUsersCount: 0,
+       currentPage: 1,
 
        
     
@@ -40,15 +43,30 @@ let usersReducer = (state = initialState, action) =>{
         }
       
    }
+   case 'SET-CURRENT-PAGE':{
+    return {...state, currentPage: action.currentPage}
+  
+}
    case 'SET-USERS':{
-    return {...state, users: [...state.users, ...action.users]}
+    return {...state, users: action.users}
+   }
+   case 'SET-TOTAL-USERS-COUNT':{
+    return {...state, totalUsersCount: action.count}
    }
           default:   
             return state   
-        
+    
+     
+                             
      }
      
     
+}
+export let setCurrentPageAC = (currentPage) =>{
+    
+    return{
+     type: 'SET-CURRENT-PAGE',  currentPage
+    }
 }
 export let setUsersAC = (users) =>{
     
@@ -69,6 +87,13 @@ export let unFollowAc = (userId) =>{
     type: 'UN-FOLLOW' , userId
     }
 }
+export let setTotalUsersCountAC = (totalUsersCount) =>{
+    
+    return{
+    type: 'SET-TOTAL-USERS-COUNT' , count: totalUsersCount
+    }
+}
+
 
 
 export default usersReducer

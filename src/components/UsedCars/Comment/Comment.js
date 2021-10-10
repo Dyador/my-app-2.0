@@ -27,7 +27,7 @@ const Comment = (props) =>{
         <button onClick={addPostUC}>Add comment</button>
         </div>
         <div>
-       {NewUsedCars}
+        {NewUsedCars}
        
         </div>
         </div>

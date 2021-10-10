@@ -1,8 +1,10 @@
-
+import {profileAPI} from '../api/api'
 
 
 let initialState = {
-  
+    
+    profile: null,
+
     ReviewData: [
     {comment: 'take it',  likeCount: '10'},
     {comment: 'OK',  likeCount: '5'},
@@ -52,6 +54,10 @@ let usedCarsReducer = (state = initialState, action) => {
             copyState.newPost = action.newText
             return copyState
         }
+        case 'SET-USER-PROFILE':{
+          
+           return {...state, profile: action.profile}
+       }
         default:
             return state
      }
@@ -70,6 +76,24 @@ export let addPostUsedCars = () =>{
     return{
      type: 'UPDATE-TEXT-USED-CR',
      newText: text
+    }
+  }
+  export let setUserProfile = (profile) => {
+    return{
+     type: 'SET-USER-PROFILE',
+     profile
+    }
+  }
+
+  
+  export let profileThunkCreator = (userId) => {
+    return (dispatch) => {
+      profileAPI.profile(userId)
+      .then(response=>{
+         
+        dispatch(setUserProfile(response.data))
+      
+     })  
     }
   }
 

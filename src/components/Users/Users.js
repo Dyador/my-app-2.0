@@ -1,34 +1,42 @@
 import style from './Users.module.css'
-import Fotos from '../Dialogs/Fotos'
-import * as axios from 'axios'
 import userMock from '../../img/userMock.png'
+import { NavLink } from 'react-router-dom'
+import * as axios from 'axios'
+import {usersAPI} from '../../api/api'
+
 const Users = (props) => {
-    let getUser = () => {
+ 
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = []
+    for (let i=1; i <= pagesCount; i++){
+        pages.push(i)
 
-   
-   
-   if(props.users.length === 0){
-   axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response=>{
-    
-    props.setUsers(response.data.items)
-   })
-   
-
-   
-   }
-}
+    }
     return(
         <div >
-            <button onClick={getUser}>Get Users</button>
+           <div>
+              {pages.map( p => {
+               return <span onClick={ () => {props.onPageChanged(p)}} className={props.currentPage === p && style.n}>{p}</span>   
+              })} 
+           </div>
          {props.users.map(u =><div key={u.id}>
              
          
-             {/*<Fotos  /> */} <img src={u.photos.small != null ? u.photos.small : userMock} />
-         
-         
              <div>
-                 {u.followed ? <button onClick={()=> {props.unfollow(u.id)}}>unFollow</button>
-                  : <button onClick={()=> {props.follow(u.id)}}>Follow</button>}
+             <NavLink to={'/UsedCars/' + u.id}>
+              <img src={u.photos.small != null ? u.photos.small : userMock} />
+              </NavLink>
+              </div>
+             <div>
+                 {u.followed 
+                  ? <button disabled={props.followingInProgress.some(id=> id === u.id)} onClick={()=> {
+                    props.unFollowThunkCreator(u.id)
+                 }}>unFollow</button>
+
+
+               : <button disabled={props.followingInProgress.some(id=> id === u.id)} onClick={()=> {
+                props.followThunkCreator(u.id)
+               }}>Follow</button>}
              
              </div>
         

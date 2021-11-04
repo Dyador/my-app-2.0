@@ -5,7 +5,7 @@ import * as axios from 'axios'
 let instance = axios.create({
     withCredentials: true,
     baseURL:'https://social-network.samuraijs.com/api/1.0/',
-    headers:{'API-KEY': '97a1d3b2-4fba-45af-992b-d246cd06607c'},
+    headers:{'API-KEY': '953f11dc-cc81-4678-b234-09d4abf8c45f'},
 })
 
 export const usersAPI ={

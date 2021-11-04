@@ -4,7 +4,8 @@ import { connect } from 'react-redux'
 import React from 'react'
 import {unFollowThunkCreator, followThunkCreator, setTotalUsersCount, getUsersThunkCreator} from '../../redux/users-reducer'
 import Preloader from '../common/Preloader/Preloader'
-import {usersAPI} from '../../api/api'
+import {withAuthRedirect} from '../../hoc/withAuthRedirect'
+import {compose } from 'redux'
 class UsersC extends React.Component  {
 
 
@@ -49,41 +50,16 @@ const mapStateToProps = (state) => {
 }
 }
 
-// const mapDispatchToProps = (dispatch) => {
-    
-//     return{
-//         follow:  (userId) =>{
-//             dispatch(followAc(userId))
-//         },
-//         unfollow:  (userId) =>{
-//             dispatch(unFollowAc(userId))
-//         },
-//         setUsers:  (users) =>{
-//             dispatch(setUsersAC(users))
-            
-//         },
-//         setCurrentPage:  (pageNumber) =>{
-//             dispatch(setCurrentPageAC(pageNumber))
-            
-//         },
-//         setTotalUsersCount:  (totalCount) =>{
-//             dispatch(setTotalUsersCountAC(totalCount))
-            
-//         },
-//         toggleIsFetching: (isFetching) => {
-//             dispatch(toggleIsFetchingAc(isFetching))
-//         }
- 
-           
-// }
-
-// }
 
 
-const ContainerUsers = connect(mapStateToProps, {
-    followThunkCreator,
-    unFollowThunkCreator,
-    setTotalUsersCount,
-    getUsersThunkCreator,
-} )(UsersC)
-export default ContainerUsers
+export default compose(
+    withAuthRedirect,
+    connect(mapStateToProps, {
+        followThunkCreator,
+        unFollowThunkCreator,
+        setTotalUsersCount,
+        getUsersThunkCreator,
+    } ),
+    )
+    (UsersC)
+

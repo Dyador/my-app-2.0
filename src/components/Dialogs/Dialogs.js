@@ -2,6 +2,7 @@ import DialogsItem from './DialogsItem'
 import style from './Dialogs.module.css'
 import Messages from './Messages'
 import React from 'react'
+import { Redirect } from 'react-router'
 
 
 
@@ -23,6 +24,10 @@ const Dialogs = (props) => {
   let text = newTextDialog.current.value 
   props.onChangeDialogsText(text)
  }
+
+
+
+
 
 return(
     <div className={style.wrapper}>

@@ -1,9 +1,10 @@
 import React from 'react'
 import UsedCars from './UsedCars'
-import * as axios from 'axios'
 import { connect } from 'react-redux'
 import { profileThunkCreator} from '../../redux/used-cars-reducer'
 import { withRouter } from 'react-router'
+import {compose } from 'redux'
+import {withAuthRedirect} from '../../hoc/withAuthRedirect'
 
 class UsedCarsContainer extends React.Component{
     componentDidMount(){
@@ -15,15 +16,28 @@ class UsedCarsContainer extends React.Component{
     
     }
     render(){
+        
+       
+        
         return(
         <UsedCars {...this.props} profile={this.props.profile}/>
         )
     }
 }
-let mapStateToProps = (state) => ({
-    profile: state.UsedCarsPage.profile
-})
-    
 
-let WithUrlDataCc = withRouter(UsedCarsContainer)
-export default connect(mapStateToProps, { profileThunkCreator})(WithUrlDataCc)
+
+
+
+
+
+let mapStateToProps = (state) => ({
+    profile: state.UsedCarsPage.profile,
+    
+})
+
+
+export default compose(
+    connect(mapStateToProps, { profileThunkCreator}),
+    withRouter,
+    withAuthRedirect)
+    (UsedCarsContainer)
